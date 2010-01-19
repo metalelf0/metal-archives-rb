@@ -41,7 +41,8 @@ class Parser
       title = @band_page_document.xpath("/html/body/center/table[3]/tr[#{row_counter}]/td[1]/a").text
       break if title == ""
       year = try_to_set_year_from(@band_page_document, row_counter)
-      albums << Album.new(:title => title, :year => year)
+      rating = try_to_set_rating_from(@band_page_document, row_counter)
+      albums << Album.new(:title => title, :year => year, :rating => rating)
       row_counter += 1
     end
     albums
@@ -56,6 +57,15 @@ class Parser
       year = nil
     end
     year
+  end
+  
+  def try_to_set_rating_from document, row_counter
+    begin
+      rating = document.xpath("/html/body/center/table[3]/tr[#{row_counter}]/td[4]").text.split("%")[0].split(" ")[-1].to_i
+    rescue
+      rating = nil
+    end
+    rating
   end
   
 end

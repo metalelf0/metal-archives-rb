@@ -39,7 +39,8 @@ describe Parser do
   
   it "should get band discography from its page" do
     @parser.band_albums[0].title.should eql("Promo")
-    @parser.band_albums[1].title.should eql("Willkommen Folk Tell Drekka Fest!")
+    @parser.band_albums[0].year.should eql(2004)
+    @parser.band_albums[0].rating.should eql(53)    
   end
   
 end
