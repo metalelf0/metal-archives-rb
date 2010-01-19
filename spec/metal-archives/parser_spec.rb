@@ -37,4 +37,9 @@ describe Parser do
     @parser.band_status.should eql("Active")
   end
   
+  it "should get band discography from its page" do
+    @parser.band_albums[0].title.should eql("Promo")
+    @parser.band_albums[1].title.should eql("Willkommen Folk Tell Drekka Fest!")
+  end
+  
 end

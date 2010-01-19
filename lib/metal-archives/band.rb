@@ -7,6 +7,7 @@ class Band
   attr_accessor :formed_in
   attr_accessor :current_label
   attr_accessor :band_status
+  attr_accessor :albums
 
   def initialize parser
     @name           = parser.band_name
@@ -16,6 +17,7 @@ class Band
     @formed_in      = parser.formed_in
     @current_label  = parser.current_label
     @band_status    = parser.band_status
+    @albums         = parser.band_albums
   end
 
 end

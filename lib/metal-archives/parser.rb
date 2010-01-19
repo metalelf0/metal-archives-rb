@@ -34,4 +34,16 @@ class Parser
     @band_page_document.xpath('/html/body/center/table[1]/tr/td[1]/table/tr[7]/td[4]').text
   end
   
+  def band_albums
+    xpath_row_counter = 1
+    albums = []
+    while(true) do
+      album_name = @band_page_document.xpath("/html/body/center/table[3]/tr[#{xpath_row_counter}]/td[1]/a").text
+      break if album_name == ""
+      albums << Album.new(album_name)
+      xpath_row_counter += 1
+    end
+    albums
+  end
+  
 end
