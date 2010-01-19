@@ -35,15 +35,27 @@ class Parser
   end
   
   def band_albums
-    xpath_row_counter = 1
+    row_counter = 1
     albums = []
     while(true) do
-      album_name = @band_page_document.xpath("/html/body/center/table[3]/tr[#{xpath_row_counter}]/td[1]/a").text
-      break if album_name == ""
-      albums << Album.new(album_name)
-      xpath_row_counter += 1
+      title = @band_page_document.xpath("/html/body/center/table[3]/tr[#{row_counter}]/td[1]/a").text
+      break if title == ""
+      year = try_to_set_year_from(@band_page_document, row_counter)
+      albums << Album.new(:title => title, :year => year)
+      row_counter += 1
     end
     albums
+  end
+  
+  private
+  
+  def try_to_set_year_from document, row_counter
+    begin
+      year = document.xpath("/html/body/center/table[3]/tr[#{row_counter}]/td[2]").text.split(", ")[1].to_i
+    rescue
+      year = nil
+    end
+    year
   end
   
 end

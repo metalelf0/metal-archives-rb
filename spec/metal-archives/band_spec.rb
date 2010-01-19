@@ -13,7 +13,10 @@ describe Band do
     parser = Parser.new(SAMPLE_BAND_PAGE)
     trollfest = Band.new(parser)
     trollfest.albums[0].title.should eql("Promo")
+    trollfest.albums[0].year.should eql(2004)
     trollfest.albums[1].title.should eql("Willkommen Folk Tell Drekka Fest!")
+    trollfest.albums[1].year.should eql(2005)
   end
+
 
 end
