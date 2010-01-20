@@ -42,7 +42,8 @@ class Parser
       break if title == ""
       year = try_to_set_year_from(@band_page_document, row_counter)
       rating = try_to_set_rating_from(@band_page_document, row_counter)
-      albums << Album.new(:title => title, :year => year, :rating => rating)
+      release_id = try_to_set_release_id_from(@band_page_document, row_counter)
+      albums << Album.new(:title => title, :year => year, :rating => rating, :release_id => release_id)
       row_counter += 1
     end
     albums
@@ -66,6 +67,15 @@ class Parser
       rating = nil
     end
     rating
+  end
+
+  def try_to_set_release_id_from document, row_counter
+    begin
+      release_id = document.xpath("/html/body/center/table[3]/tr[#{row_counter}]/td[1]/a/@href").text.split("?id=")[1].to_i
+    rescue
+      release_id = nil
+    end
+    release_id
   end
   
 end

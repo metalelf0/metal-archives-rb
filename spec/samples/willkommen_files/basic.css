@@ -1,0 +1,79 @@
+body { 
+	font-family: Arial; font-size: 12px; color: #FFFFFF; background-color: #000000;
+	scrollbar-face-color: #000000;
+	scrollbar-shadow-color: #990000;
+	scrollbar-highlight-color: #AA0000;
+	scrollbar-3dlight-color: #993300;
+	scrollbar-darkshadow-color: #220000;
+	scrollbar-track-color: #551521;
+	scrollbar-arrow-color: #FFFFFF; 
+}
+
+td { 
+	font-family: Arial;
+	font-size: 12px; 
+	color: #FFFFFF; 
+	background-color: #000000;
+}
+
+p { 
+	font-family: Arial; 
+	font-size: 12px; 
+	color: #FFFFFF; 
+	background-color: #000000;
+}
+
+h3 { 
+	font-family: Arial; 
+	color: #FFFFFF; 
+	background-color: #000000;
+}
+
+table { 
+	font-family: Arial; 
+	color: #FFFFFF; 
+	background-color: #000000; 
+}
+
+a:visited { font-family: Arial; font-size: 12px; color: #C0C0C0; text-decoration: none}
+a:link { font-family: Arial; font-size: 12px; color: #CC0033; text-decoration: none}
+a:hover { font-family: Arial; font-size: 12px; color: #996600; text-decoration: underline}
+
+.album { font-family: Arial; font-size: 12px; color: #FFFFFF; font-weight: bold }
+a.album { font-family: Arial; font-size: 12px; color: #CC0033; font-weight: bold }
+a.album:visited { font-family: Arial; font-size: 12px; color: #C0C0C0; font-weight: bold }
+a.album:hover { font-family: Arial; font-size: 12px; color: #996600; font-weight: bold }
+
+.single { font-family: Arial; font-size: 10px; color: #FFFFFF; }
+a.single { font-family: Arial; font-size: 10px; color: #CC0033; }
+a.single:visited { font-family: Arial; font-size: 10px; color: #C0C0C0; }
+a.single:hover { font-family: Arial; font-size: 10px; color: #996600; }
+
+.field { font-family: Arial; color: #FFFFFF; background-color: #000000; }
+.btn { font-family: Arial; color: #FFFFFF; background-color: #000000; }
+.tt { color:#FFFFFF;background-color:#551521;font-size:18px;font-weight:bold;text-align:center; font-family: Arial; }
+.trt { color:#CCCCCC;background-color:#660000;font-size:16px;font-weight:bold;text-align:left; font-family: Arial; }
+.ttt { color:#CCCCCC;background-color:#660000;font-size:16px;font-weight:bold;text-align:center; font-family: Arial; }
+.ttt2 { font-family:  Arial, Helvetica, sans-serif; font-size: 16px; color: #FFFFFF; background-color: #993333; font-weight: bold; text-align: center }
+.ttl {  font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #000000; background-color: #CCCCCC}
+.msg1 { font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #FFFFFF; background-color: #313131; font-weight: normal; text-align: left }
+.msg2 { font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #FFFFFF; background-color: #1A1609; font-weight: normal; text-align: left }
+.Low	{ font-family: Arial; font-size: 12px; font-weight: normal; color: #000000; background-color: #CCCCCC; }
+.Normal	{ font-family: Arial; font-size: 12px; font-weight: normal; color: #000000; background-color: #FFFFFF; }
+.High	{ font-family: Arial; font-size: 12px; font-weight: bold; color: #FFFFFF; background-color: #CA0E09; }
+.small { font-size: 10px; }
+
+img#bandPic {
+	max-width: 400px;
+	max-height: 400px;
+}
+
+img.coverArt {
+	max-width: 250px;
+	max-height: 250px;
+}
+
+.formRules { 
+	text-align: left; 
+	width: 460px; 
+}
