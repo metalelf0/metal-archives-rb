@@ -29,7 +29,6 @@ Then /^it should have the following albums:$/ do |expected_table|
   expected_table.diff!(actual_table)
 end
 
-
 Then /^it should have an album with index "([^\"]*)"$/ do |index|
   @index = index.to_i
   @band_data_retriever.band.albums[@index].should_not be_nil

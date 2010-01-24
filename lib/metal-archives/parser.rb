@@ -11,27 +11,27 @@ class Parser
   end
   
   def genre
-    @band_page_document.xpath('/html/body/center/table[1]/tr/td[1]/table/tr[3]/td').text
+    fetch_text_under /Genre/
   end
   
   def lyrical_themes
-    @band_page_document.xpath('/html/body/center/table[1]/tr/td[1]/table/tr[5]/td').text  
+    fetch_text_under /Lyrical theme/
   end  
 
   def origin
-    @band_page_document.xpath('/html/body/center/table[1]/tr/td[1]/table/tr[7]/td[1]/a').text
+    fetch_link_under /Origin/
   end
 
   def formed_in
-    @band_page_document.xpath('/html/body/center/table[1]/tr/td[1]/table/tr[7]/td[2]').text
+    fetch_text_under /Formed in/
   end
   
   def current_label
-    @band_page_document.xpath('/html/body/center/table[1]/tr/td[1]/table/tr[7]/td[3]').text
+    fetch_text_under /Current label/
   end
   
   def band_status
-    @band_page_document.xpath('/html/body/center/table[1]/tr/td[1]/table/tr[7]/td[4]').text
+    fetch_text_under /Status/
   end
   
   def band_albums
@@ -50,6 +50,28 @@ class Parser
   end
   
   private
+  
+  def fetch_text_under regexp
+    begin
+      node_with_header = @band_page_document.xpath('//td').select { |node| node.text =~ regexp }[1]
+      index_of_node =    node_with_header.parent.children.index(node_with_header)
+      return node_with_header.parent.next_sibling.children[index_of_node].text.strip
+    rescue
+      return ""
+    end
+  end
+
+  def fetch_link_under regexp
+    begin
+      node_with_header = @band_page_document.xpath('//td').select { |node| node.text =~ regexp }[1]
+      index_of_node =    node_with_header.parent.children.index(node_with_header)
+      return node_with_header.parent.next_sibling.children[index_of_node].children.select { |node| node.name == "a" }[0].text.strip
+    rescue
+      return ""
+    end
+  end
+  
+  
   
   def try_to_set_year_from document, row_counter
     begin
