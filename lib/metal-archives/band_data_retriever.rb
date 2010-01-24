@@ -4,7 +4,7 @@ class BandDataRetriever
   attr_accessor :band
   
   def initialize band_to_search=""
-    @band_to_search = band_to_search
+    @band_to_search = band_to_search.strip
   end
   
   def search
