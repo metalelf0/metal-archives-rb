@@ -13,6 +13,6 @@ band = BandDataRetriever.new(band_name).search
 puts "BAND DATA FOR " + "#{band.name}".color(:red) + ":"
 
 [:genre, :lyrical_themes, :origin, :formed_in, :current_label, :band_status].each do |attribute|
-  print_band_attribute :red, attribute, band
+  print_band_attribute_in_color band, attribute, :red 
 end
 

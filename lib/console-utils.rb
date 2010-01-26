@@ -11,7 +11,7 @@ module ConsoleUtils
     pad_to(attribute_name, 20)
   end
   
-  def print_band_attribute color, attribute, band
+  def print_band_attribute band, attribute, color
     puts "#{humanize(attribute)}> " +  "#{band.send(attribute)}".color(color)
   end
   
