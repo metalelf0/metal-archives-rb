@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'metal-archives/parser'
+require 'metal-archives/band_parser'
 require 'metal-archives/url_handler'
 require 'metal-archives/band'
 require 'metal-archives/album'

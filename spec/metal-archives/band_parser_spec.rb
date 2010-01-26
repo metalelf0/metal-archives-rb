@@ -1,13 +1,13 @@
 require File.join(File.dirname(__FILE__), "..","spec_helper")
 
-describe Parser do
+describe BandParser do
 
   before(:all) do
     # url_handler = UrlHandler.new("Trollfest")
     # trollfest_page = url_handler.band_url
-    # @parser = Parser.new(trollfest_page)
-    @parser = Parser.new(SAMPLE_BAND_PAGE)
-    @parser2 = Parser.new(SAMPLE_DIFFICULT_BAND_PAGE)
+    # @parser = BandParser.new(trollfest_page)
+    @parser = BandParser.new(SAMPLE_BAND_PAGE)
+    @parser2 = BandParser.new(SAMPLE_DIFFICULT_BAND_PAGE)
   end
 
   it "should get band name from its page" do

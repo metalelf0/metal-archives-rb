@@ -9,7 +9,7 @@ class BandDataRetriever
   
   def search
     band_url = UrlHandler.new(@band_to_search).band_url
-    parser = Parser.new(band_url)
+    parser = BandParser.new(band_url)
     @band = Band.new(parser)
   end
   

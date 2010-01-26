@@ -7,9 +7,9 @@ describe BandDataRetriever do
     UrlHandler.should_receive(:new).with("Trollfest").and_return(url_handler_mock)
     url_mock = mock("url")
     url_handler_mock.should_receive(:band_url).and_return(url_mock)
-    parser_mock = mock("parser")
-    Parser.should_receive(:new).with(url_mock).and_return(parser_mock)
-    Band.should_receive(:new).with(parser_mock)
+    band_parser_mock = mock("band_parser")
+    BandParser.should_receive(:new).with(url_mock).and_return(band_parser_mock)
+    Band.should_receive(:new).with(band_parser_mock)
     
     band_data_retriever = BandDataRetriever.new "Trollfest"
     band_data_retriever.search

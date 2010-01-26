@@ -1,4 +1,4 @@
-class Parser
+class BandParser
 
   attr_accessor :band_page_document
 
