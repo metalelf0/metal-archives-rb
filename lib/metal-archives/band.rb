@@ -9,7 +9,7 @@ class Band
   attr_accessor :band_status
   attr_accessor :albums
 
-  def initialize parser
+  def build_from parser
     @name           = parser.band_name
     @genre          = parser.genre
     @lyrical_themes = parser.lyrical_themes
@@ -18,6 +18,7 @@ class Band
     @current_label  = parser.current_label
     @band_status    = parser.band_status
     @albums         = parser.band_albums
+    self
   end
 
 end
